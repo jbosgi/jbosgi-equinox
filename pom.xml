@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!-- ====================================================================== -->
+  <!--                                                                        -->
+  <!--  JBoss, the OpenSource J2EE webOS                                      -->
+  <!--                                                                        -->
+  <!--  Distributable under LGPL license.                                     -->
+  <!--  See terms of license at http://www.gnu.org.                           -->
+  <!--                                                                        -->
+  <!-- ====================================================================== -->
+
+  <!-- $Id$ -->
+  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>JBossOSGi Runtime - Equinox</name>
+
+  <groupId>org.jboss.osgi</groupId>
+  <artifactId>jboss-osgi-runtime-equinox</artifactId>
+  <packaging>jar</packaging>
+
+  <version>1.0.0</version>
+  
+  <!-- Parent -->
+  <parent>
+    <groupId>org.jboss.osgi</groupId>
+    <artifactId>jboss-osgi-parent</artifactId>
+    <version>1.0.1</version>
+  </parent>
+
+  <!-- Properties -->
+  <properties>
+    <version.eclipse.equinox>3.4.2</version.eclipse.equinox>
+    <version.jboss.microcontainer>2.0.5.GA</version.jboss.microcontainer>
+    <version.jboss.osgi.spi>1.0.0</version.jboss.osgi.spi>
+  </properties>
+  
+  <!-- Dependencies -->
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.osgi</groupId>
+      <artifactId>jboss-osgi-spi</artifactId>
+      <version>${version.jboss.osgi.spi}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi</artifactId>
+      <version>${version.eclipse.equinox}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi.services</artifactId>
+      <version>${version.eclipse.equinox}</version>
+    </dependency>
+    
+    <!-- Test Dependencies -->
+    <dependency>
+      <groupId>org.jboss.microcontainer</groupId>
+      <artifactId>jboss-kernel</artifactId>
+      <version>${version.jboss.microcontainer}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- Build -->
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+    <plugins>
+    </plugins>
+  </build>
+
+  <!-- Profiles -->
+  <profiles>
+  </profiles>
+
+</project>
