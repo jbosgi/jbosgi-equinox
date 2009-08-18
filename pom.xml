@@ -47,13 +47,11 @@
       <artifactId>org.eclipse.osgi</artifactId>
       <version>${version.eclipse.equinox}</version>
     </dependency>
-    <!-- 
     <dependency>
       <groupId>org.eclipse.equinox</groupId>
       <artifactId>org.eclipse.osgi.services</artifactId>
       <version>${version.eclipse.equinox}</version>
     </dependency>
-    -->
   </dependencies>
 
   <!-- Build -->
