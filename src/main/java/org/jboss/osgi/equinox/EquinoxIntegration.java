@@ -41,8 +41,9 @@ public class EquinoxIntegration extends FrameworkIntegration
    
    public void create()
    {
-      String implVersion = getClass().getPackage().getImplementationVersion();
-      log.info("OSGi Integration Equinox - " + implVersion);
+      // Log INFO about this implementation
+      log.info(getClass().getPackage().getImplementationTitle());
+      log.info(getClass().getPackage().getImplementationVersion());
 
       // Load the framework instance
       FrameworkFactory factory = ServiceLoader.loadService(FrameworkFactory.class);
