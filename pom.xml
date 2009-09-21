@@ -20,19 +20,19 @@
   <artifactId>jboss-osgi-runtime-equinox</artifactId>
   <packaging>jar</packaging>
 
-  <version>3.5-SNAPSHOT</version>
+  <version>3.5</version>
   
   <!-- Parent -->
   <parent>
     <groupId>org.jboss.osgi</groupId>
     <artifactId>jboss-osgi-parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
   </parent>
 
   <!-- Properties -->
   <properties>
     <version.eclipse.equinox>3.5</version.eclipse.equinox>
-    <version.jboss.osgi.spi>1.0.1-SNAPSHOT</version.jboss.osgi.spi>
+    <version.jboss.osgi.spi>1.0.1</version.jboss.osgi.spi>
   </properties>
   
   <!-- Dependencies -->
@@ -66,8 +66,11 @@
     </plugins>
   </build>
 
-  <!-- Profiles -->
-  <profiles>
-  </profiles>
+  <!-- Subversion -->
+  <scm>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/tags/jboss-osgi-runtime-equinox-3.5</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/tags/jboss-osgi-runtime-equinox-3.5</developerConnection>
+    <url>http://fisheye.jboss.com/qsearch/JBossOSGi/projects/runtime/equinox/tags/jboss-osgi-runtime-equinox-3.5</url>
+  </scm>
 
 </project>
