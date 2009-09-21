@@ -20,7 +20,7 @@
   <artifactId>jboss-osgi-runtime-equinox</artifactId>
   <packaging>jar</packaging>
 
-  <version>3.5</version>
+  <version>3.6-SNAPSHOT</version>
   
   <!-- Parent -->
   <parent>
@@ -68,9 +68,9 @@
 
   <!-- Subversion -->
   <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/tags/jboss-osgi-runtime-equinox-3.5</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/tags/jboss-osgi-runtime-equinox-3.5</developerConnection>
-    <url>http://fisheye.jboss.com/qsearch/JBossOSGi/projects/runtime/equinox/tags/jboss-osgi-runtime-equinox-3.5</url>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/trunk</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/trunk</developerConnection>
+    <url>http://fisheye.jboss.com/qsearch/JBossOSGi/projects/runtime/equinox/trunk</url>
   </scm>
 
 </project>
