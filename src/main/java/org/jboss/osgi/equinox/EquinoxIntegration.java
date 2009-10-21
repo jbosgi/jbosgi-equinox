@@ -23,9 +23,12 @@ package org.jboss.osgi.equinox;
 
 //$Id: FelixIntegration.java 91762 2009-07-29 12:14:37Z thomas.diesler@jboss.com $
 
+import java.util.Map;
+
 import org.jboss.logging.Logger;
 import org.jboss.osgi.spi.framework.FrameworkIntegration;
 import org.jboss.osgi.spi.util.ServiceLoader;
+import org.osgi.framework.launch.Framework;
 import org.osgi.framework.launch.FrameworkFactory;
 
 /**
@@ -38,15 +41,17 @@ public class EquinoxIntegration extends FrameworkIntegration
 {
    // Provide logging
    final Logger log = Logger.getLogger(EquinoxIntegration.class);
-   
-   public void create()
+
+   @Override
+   protected Framework createFramework(Map<String, Object> properties)
    {
       // Log INFO about this implementation
-      log.info(getClass().getPackage().getImplementationTitle());
-      log.info(getClass().getPackage().getImplementationVersion());
+      String implTitle = getClass().getPackage().getImplementationTitle();
+      String impVersion = getClass().getPackage().getImplementationVersion();
+      log.info(implTitle + " - " + impVersion);
 
       // Load the framework instance
       FrameworkFactory factory = ServiceLoader.loadService(FrameworkFactory.class);
-      framework = factory.newFramework(properties);
+      return factory.newFramework(properties);
    }
 }

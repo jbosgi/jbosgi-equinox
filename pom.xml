@@ -20,19 +20,26 @@
   <artifactId>jboss-osgi-runtime-equinox</artifactId>
   <packaging>jar</packaging>
 
-  <version>3.6-SNAPSHOT</version>
+  <version>3.5-SNAPSHOT</version>
   
   <!-- Parent -->
   <parent>
     <groupId>org.jboss.osgi</groupId>
     <artifactId>jboss-osgi-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.4-SNAPSHOT</version>
   </parent>
+
+  <!-- Subversion -->
+  <scm>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/trunk</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/trunk</developerConnection>
+    <url>http://fisheye.jboss.com/qsearch/JBossOSGi</url>
+  </scm>
 
   <!-- Properties -->
   <properties>
     <version.eclipse.equinox>3.5</version.eclipse.equinox>
-    <version.jboss.osgi.spi>1.0.1</version.jboss.osgi.spi>
+    <version.jboss.osgi.spi>1.0.3-SNAPSHOT</version.jboss.osgi.spi>
   </properties>
   
   <!-- Dependencies -->
@@ -52,25 +59,28 @@
       <artifactId>org.eclipse.osgi.services</artifactId>
       <version>${version.eclipse.equinox}</version>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <!-- Build -->
   <build>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-        <filtering>true</filtering>
-      </testResource>
-    </testResources>
     <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemProperties>
+            <property>
+              <name>log4j.output.dir</name>
+              <value>${project.build.directory}</value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-
-  <!-- Subversion -->
-  <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/trunk</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/jboss-osgi/projects/runtime/equinox/trunk</developerConnection>
-    <url>http://fisheye.jboss.com/qsearch/JBossOSGi/projects/runtime/equinox/trunk</url>
-  </scm>
 
 </project>
