@@ -41,6 +41,7 @@
     <version.eclipse.equinox>3.5</version.eclipse.equinox>
     <version.jboss.osgi.deployment>0.0.1-SNAPSHOT</version.jboss.osgi.deployment>
     <version.jboss.osgi.spi>1.0.3-SNAPSHOT</version.jboss.osgi.spi>
+    <version.jboss.osgi.testing>0.0.1-SNAPSHOT</version.jboss.osgi.testing>
   </properties>
   
   <!-- Dependencies -->
@@ -65,6 +66,13 @@
       <groupId>org.eclipse.equinox</groupId>
       <artifactId>org.eclipse.osgi.services</artifactId>
       <version>${version.eclipse.equinox}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.jboss.osgi</groupId>
+      <artifactId>jboss-osgi-testing</artifactId>
+      <version>${version.jboss.osgi.testing}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
