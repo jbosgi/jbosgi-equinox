@@ -25,8 +25,10 @@ package org.jboss.osgi.equinox;
 
 import java.util.Map;
 
-import org.jboss.osgi.spi.framework.FrameworkIntegration;
+import org.jboss.osgi.deployment.DeploymentActivator;
+import org.jboss.osgi.spi.framework.FrameworkIntegrationBean;
 import org.jboss.osgi.spi.util.ServiceLoader;
+import org.osgi.framework.BundleContext;
 import org.osgi.framework.launch.Framework;
 import org.osgi.framework.launch.FrameworkFactory;
 import org.slf4j.Logger;
@@ -38,10 +40,12 @@ import org.slf4j.LoggerFactory;
  * @author thomas.diesler@jboss.com
  * @since 23-Jan-2009
  */
-public class EquinoxIntegration extends FrameworkIntegration
+public class EquinoxIntegration extends FrameworkIntegrationBean
 {
    // Provide logging
    final Logger log = LoggerFactory.getLogger(EquinoxIntegration.class);
+   
+   private DeploymentActivator deploymentActivator;
 
    @Override
    protected Framework createFramework(Map<String, Object> properties)
@@ -54,5 +58,19 @@ public class EquinoxIntegration extends FrameworkIntegration
       // Load the framework instance
       FrameworkFactory factory = ServiceLoader.loadService(FrameworkFactory.class);
       return factory.newFramework(properties);
+   }
+
+   @Override
+   protected void registerSystemServices(BundleContext context)
+   {
+      deploymentActivator = new DeploymentActivator();
+      deploymentActivator.start(context);
+   }
+
+   @Override
+   protected void unregisterSystemServices(BundleContext context)
+   {
+      if (deploymentActivator != null)
+         deploymentActivator.stop(context);
    }
 }

@@ -23,7 +23,7 @@ package org.jboss.osgi.equinox;
 
 //$Id$
 
-import org.jboss.osgi.deployment.DeploymentServices;
+import org.jboss.osgi.deployment.DeploymentActivator;
 import org.jboss.osgi.spi.framework.PropertiesBootstrapProvider;
 import org.osgi.framework.BundleContext;
 
@@ -35,19 +35,19 @@ import org.osgi.framework.BundleContext;
  */
 public class EquinoxBootstrapProvider extends PropertiesBootstrapProvider
 {
-   private DeploymentServices deploymentServices;
+   private DeploymentActivator deploymentActivator;
    
    @Override
    protected void registerSystemServices(BundleContext context)
    {
-      deploymentServices = new DeploymentServices();
-      deploymentServices.start(context);
+      deploymentActivator = new DeploymentActivator();
+      deploymentActivator.start(context);
    }
 
    @Override
    protected void unregisterSystemServices(BundleContext context)
    {
-      if (deploymentServices != null)
-         deploymentServices.stop(context);
+      if (deploymentActivator != null)
+         deploymentActivator.stop(context);
    }
 }
