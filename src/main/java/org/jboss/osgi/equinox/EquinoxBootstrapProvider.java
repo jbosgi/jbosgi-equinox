@@ -23,9 +23,13 @@ package org.jboss.osgi.equinox;
 
 //$Id$
 
+import java.net.URL;
+
 import org.jboss.osgi.deployment.DeploymentActivator;
 import org.jboss.osgi.spi.framework.PropertiesBootstrapProvider;
 import org.osgi.framework.BundleContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A bootstrap provider for Equinox.
@@ -35,7 +39,21 @@ import org.osgi.framework.BundleContext;
  */
 public class EquinoxBootstrapProvider extends PropertiesBootstrapProvider
 {
+   // Provide logging
+   final Logger log = LoggerFactory.getLogger(EquinoxBootstrapProvider.class);
+   
    private DeploymentActivator deploymentActivator;
+   
+   @Override
+   public void configure(URL urlConfig)
+   {
+      super.configure(urlConfig);
+      
+      // Log INFO about this implementation
+      String implTitle = getClass().getPackage().getImplementationTitle();
+      String impVersion = getClass().getPackage().getImplementationVersion();
+      log.info(implTitle + " - " + impVersion);
+   }
    
    @Override
    protected void registerSystemServices(BundleContext context)
