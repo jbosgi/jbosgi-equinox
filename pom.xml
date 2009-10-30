@@ -39,9 +39,9 @@
   <!-- Properties -->
   <properties>
     <version.eclipse.equinox>3.5</version.eclipse.equinox>
-    <version.jboss.osgi.deployment>0.0.1-SNAPSHOT</version.jboss.osgi.deployment>
+    <version.jboss.osgi.deployment>1.0.0-SNAPSHOT</version.jboss.osgi.deployment>
+    <version.jboss.osgi.husky>1.0.2-SNAPSHOT</version.jboss.osgi.husky>
     <version.jboss.osgi.spi>1.0.3-SNAPSHOT</version.jboss.osgi.spi>
-    <version.jboss.osgi.testing>0.0.1-SNAPSHOT</version.jboss.osgi.testing>
   </properties>
   
   <!-- Dependencies -->
@@ -69,10 +69,10 @@
     </dependency>
     
     <dependency>
-      <groupId>org.jboss.osgi</groupId>
-      <artifactId>jboss-osgi-testing</artifactId>
-      <version>${version.jboss.osgi.testing}</version>
-      <scope>provided</scope>
+      <groupId>org.jboss.osgi.bundles</groupId>
+      <artifactId>jboss-osgi-husky</artifactId>
+      <version>${version.jboss.osgi.husky}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
