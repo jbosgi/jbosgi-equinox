@@ -26,7 +26,7 @@
   <parent>
     <groupId>org.jboss.osgi</groupId>
     <artifactId>jboss-osgi-parent</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.4</version>
   </parent>
 
   <!-- Subversion -->
@@ -39,9 +39,9 @@
   <!-- Properties -->
   <properties>
     <version.eclipse.equinox>3.5</version.eclipse.equinox>
-    <version.jboss.osgi.deployment>1.0.0-SNAPSHOT</version.jboss.osgi.deployment>
-    <version.jboss.osgi.husky>1.0.2-SNAPSHOT</version.jboss.osgi.husky>
-    <version.jboss.osgi.spi>1.0.3-SNAPSHOT</version.jboss.osgi.spi>
+    <version.jboss.osgi.deployment>1.0.0</version.jboss.osgi.deployment>
+    <version.jboss.osgi.husky>1.0.2</version.jboss.osgi.husky>
+    <version.jboss.osgi.spi>1.0.3</version.jboss.osgi.spi>
   </properties>
   
   <!-- Dependencies -->
