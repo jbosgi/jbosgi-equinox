@@ -20,7 +20,7 @@
   <artifactId>jboss-osgi-runtime-equinox</artifactId>
   <packaging>jar</packaging>
 
-  <version>3.5-SNAPSHOT</version>
+  <version>3.5.1-SNAPSHOT</version>
   
   <!-- Parent -->
   <parent>
@@ -38,7 +38,7 @@
 
   <!-- Properties -->
   <properties>
-    <version.eclipse.equinox>3.5</version.eclipse.equinox>
+    <version.eclipse.equinox>3.5.1</version.eclipse.equinox>
     <version.jboss.osgi.deployment>1.0.0</version.jboss.osgi.deployment>
     <version.jboss.osgi.husky>1.0.2</version.jboss.osgi.husky>
     <version.jboss.osgi.spi>1.0.3</version.jboss.osgi.spi>
