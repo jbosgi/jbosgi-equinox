@@ -25,14 +25,13 @@ package org.jboss.osgi.equinox;
 
 import java.util.Map;
 
+import org.jboss.logging.Logger;
 import org.jboss.osgi.deployment.DeploymentServicesActivator;
 import org.jboss.osgi.spi.framework.FrameworkIntegrationBean;
 import org.jboss.osgi.spi.util.ServiceLoader;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.launch.Framework;
 import org.osgi.framework.launch.FrameworkFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Equinox specific OSGi Framework integration.
@@ -43,7 +42,7 @@ import org.slf4j.LoggerFactory;
 public class EquinoxIntegration extends FrameworkIntegrationBean
 {
    // Provide logging
-   final Logger log = LoggerFactory.getLogger(EquinoxIntegration.class);
+   private static final Logger log = Logger.getLogger(EquinoxIntegration.class);
    
    private DeploymentServicesActivator deploymentActivator;
 
