@@ -17,7 +17,7 @@
   <name>JBossOSGi Equinox</name>
 
   <groupId>org.jboss.osgi.runtime</groupId>
-  <artifactId>jboss-osgi-runtime-equinox</artifactId>
+  <artifactId>jboss-osgi-equinox</artifactId>
   <packaging>jar</packaging>
 
   <version>3.5.1.SP1-SNAPSHOT</version>
