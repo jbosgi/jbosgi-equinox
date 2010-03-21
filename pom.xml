@@ -20,7 +20,7 @@
   <artifactId>jboss-osgi-equinox</artifactId>
   <packaging>jar</packaging>
 
-  <version>3.5.1.SP1-SNAPSHOT</version>
+  <version>3.5.2-SNAPSHOT</version>
   
   <!-- Parent -->
   <parent>
@@ -38,7 +38,7 @@
 
   <!-- Properties -->
   <properties>
-    <version.eclipse.equinox>3.5.1</version.eclipse.equinox>
+    <version.eclipse.equinox>3.5.2</version.eclipse.equinox>
     <version.jboss.osgi.deployment>1.0.2-SNAPSHOT</version.jboss.osgi.deployment>
     <version.jboss.osgi.husky>1.0.4-SNAPSHOT</version.jboss.osgi.husky>
     <version.jboss.osgi.spi>1.0.5-SNAPSHOT</version.jboss.osgi.spi>
@@ -71,6 +71,28 @@
       <groupId>org.eclipse.equinox</groupId>
       <artifactId>org.eclipse.osgi.util</artifactId>
       <version>${version.eclipse.equinox}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi</artifactId>
+      <version>${version.eclipse.equinox}</version>
+      <classifier>sources</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi.services</artifactId>
+      <version>${version.eclipse.equinox}</version>
+      <classifier>sources</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.equinox</groupId>
+      <artifactId>org.eclipse.osgi.util</artifactId>
+      <version>${version.eclipse.equinox}</version>
+      <classifier>sources</classifier>
+      <scope>provided</scope>
     </dependency>
     
     <dependency>
