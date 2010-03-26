@@ -40,7 +40,6 @@
   <properties>
     <version.eclipse.equinox>3.5.2</version.eclipse.equinox>
     <version.jboss.osgi.deployment>1.0.2-SNAPSHOT</version.jboss.osgi.deployment>
-    <version.jboss.osgi.husky>1.0.4-SNAPSHOT</version.jboss.osgi.husky>
     <version.jboss.osgi.spi>1.0.5-SNAPSHOT</version.jboss.osgi.spi>
   </properties>
   
@@ -96,9 +95,8 @@
     </dependency>
     
     <dependency>
-      <groupId>org.jboss.osgi.bundles</groupId>
-      <artifactId>jboss-osgi-husky</artifactId>
-      <version>${version.jboss.osgi.husky}</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
