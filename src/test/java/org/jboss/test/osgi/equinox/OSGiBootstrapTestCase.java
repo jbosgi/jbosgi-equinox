@@ -21,47 +21,31 @@
  */
 package org.jboss.test.osgi.equinox;
 
-//$Id$
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
-import org.jboss.osgi.deployment.deployer.DeployerService;
 import org.jboss.osgi.spi.framework.OSGiBootstrap;
 import org.jboss.osgi.spi.framework.OSGiBootstrapProvider;
 import org.junit.Test;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 import org.osgi.framework.launch.Framework;
 
 /**
  * Test OSGi System bundle access
- * 
+ *
  * @author thomas.diesler@jboss.com
  * @since 27-Jul-2009
  */
-public class OSGiBootstrapTestCase 
-{
-   @Test
-   public void testFrameworkLaunch() throws Exception
-   {
-      OSGiBootstrapProvider bootProvider = OSGiBootstrap.getBootstrapProvider();
-      Framework framework = bootProvider.getFramework();
-      
-      assertEquals("BundleId == 0", 0, framework.getBundleId());
-      assertEquals("SymbolicName", "org.eclipse.osgi", framework.getSymbolicName());
-      
-      framework.start();
-      try
-      {
-         BundleContext context = framework.getBundleContext();
-         ServiceReference sref = context.getServiceReference(DeployerService.class.getName());
-         assertNotNull("DeployerService not null", sref);
-      }
-      finally
-      {
-         framework.stop();
-         framework.waitForStop(1000);
-      }
-   }
+public class OSGiBootstrapTestCase {
+
+    @Test
+    public void testFrameworkLaunch() throws Exception {
+        OSGiBootstrapProvider bootProvider = OSGiBootstrap.getBootstrapProvider();
+        Framework framework = bootProvider.getFramework();
+
+        assertEquals("BundleId == 0", 0, framework.getBundleId());
+        assertEquals("SymbolicName", "org.eclipse.osgi", framework.getSymbolicName());
+
+        framework.start();
+        framework.stop();
+        framework.waitForStop(1000);
+    }
 }

@@ -21,8 +21,6 @@
  */
 package org.jboss.test.osgi.equinox;
 
-//$Id$
-
 import static org.junit.Assert.assertEquals;
 
 import org.jboss.osgi.spi.util.ServiceLoader;
@@ -32,18 +30,18 @@ import org.osgi.framework.launch.FrameworkFactory;
 
 /**
  * Test OSGi System bundle access
- * 
+ *
  * @author thomas.diesler@jboss.com
  * @since 27-Jul-2009
  */
-public class FrameworkLaunchTestCase 
+public class FrameworkLaunchTestCase
 {
    @Test
    public void testFrameworkLaunch()
    {
       FrameworkFactory factory = ServiceLoader.loadService(FrameworkFactory.class);
       Framework framework = factory.newFramework(null);
-      
+
       assertEquals("BundleId == 0", 0, framework.getBundleId());
       assertEquals("SymbolicName", "org.eclipse.osgi", framework.getSymbolicName());
    }
