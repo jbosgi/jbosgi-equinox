@@ -18,7 +18,7 @@
   <artifactId>jboss-osgi-equinox</artifactId>
   <packaging>jar</packaging>
 
-  <version>3.5.2.SP1-SNAPSHOT</version>
+  <version>3.5.2.SP1</version>
   
   <!-- Parent -->
   <parent>
